@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Loops</title>
+    </head>
+
+    <body>
+        <h1>Syntax Perulangan <span style="color: red;">for</span></h1>
+
+        <pre style="font-size: 175%;">
+            for(init statement; kondisi; post statement) {
+                block code (sama kayak if)
+        }
+        </pre>
+
+        <ul>
+            <li>
+                init statement = bagian awal yang hanya akan dieksekusi pada perulangan, memiliki fungsi untuk menginisiasi variabel awal    
+            </li>
+            <li>
+                kondisi = bagian tengah yang nantinya akan menentukan apakah perulangan/loop akan diulang lagi atau tidak 
+            </li>
+            <li>
+                post statement = bagian akhir yang selalu di eksekusi dalam setiap perulangan, berfungsi untuk mendekatkan variabel awal supaya memenuhi bagian <i>kondisi</i> supaya perulangan dapat berhenti
+            </li>
+        </ul>
+        <strong>init statement & post statement tidak wajib diisi</strong>
+
+        <p>contoh penggunaan pengulangan dengan init statement dan post statement</p>
+        <button onclick="loops()">sentuh aku</button>
+        <p id="demo"></p>
+
+        <script>
+            function loops() {
+                let jumPengelungan = 0;
+                for (i = 0; i < 5; i++){
+                    jumPengelungan++
+                    alert(`Peringatan ini telah berulang sebanyak ${jumPengelungan} kali`)
+                }
+            }
+
+
+            let bintang = "";
+               for (let i = 0; i < 5; i++){ // setiap kali selesai 1 kali selesai looping nilai i akan ditambah 1 sampai nilai i tidak kurang dari 5
+                for (let j = 0; j <= i; j++){ // setiap kali ketrigger bakal ngeset nilai j menjadi 0 dan looping sebanyak nilai kurang dari i
+                    bintang += "*";
+                }
+                bintang += "\n"; // output looping dari i yang ditambah
+               }
+
+                let reverseBintang = ""
+                for (let i = 4; i >= 0; i--){
+                    for (let j = 1; j <= i; j++){
+                        reverseBintang += "*";
+                       }
+                    reverseBintang += "\n"
+                }
+                console.log(bintang + reverseBintang)
+
+                
+                let bintangRataKanan = ''
+                for (let i = 0; i < 5; i++){
+                    for (let j = 5; j >= i; j--){
+                        bintangRataKanan += " ";
+                    }
+
+                    for (let k = 0; k <= i; k++){
+                        bintangRataKanan += "*" 
+                    }
+
+                    bintangRataKanan += "\n"
+                }
+                // console.log();
+
+                let reverseBintangRataKanan = '';
+                for (let i = 3; i >= 0; i--){
+                    for (let j = 5; j >= i; j--) {
+                        reverseBintangRataKanan += " ";
+                    }
+
+                    for (let k = 0; k <= i; k++){
+                        reverseBintangRataKanan += "*";
+                    }
+
+                    reverseBintangRataKanan += "\n";
+                }
+               console.log(bintangRataKanan + reverseBintangRataKanan)
+        </script>
+    </body>
+</html>
